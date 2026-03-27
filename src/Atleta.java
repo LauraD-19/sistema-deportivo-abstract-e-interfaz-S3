@@ -1,4 +1,4 @@
-public class Atleta {
+public abstract class Atleta {
     protected String nombre;
     protected  int edad;
     protected double horasEntrenamiento;

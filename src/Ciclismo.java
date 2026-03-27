@@ -28,8 +28,6 @@ public class Ciclismo extends Atleta implements  Evaluar{
     public void calcularRendimineto() {
         double rendimiento = kilometroRecorrido / tiempoHoras;
         System.out.println(rendimiento);
-
-
     }
 
     @Override
