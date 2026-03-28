@@ -12,9 +12,13 @@ public abstract class Atleta {
         this.horasEntrenamiento = horasEntrenamiento;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void mostrarInfo(){
         System.out.println("--Nombre: "+nombre+" --Edad:"+edad+" --Horas de entrenamiento: "+horasEntrenamiento);
     }
-    public abstract void calcularRendimineto();
+    public abstract double calcularRendimineto();
 
 }

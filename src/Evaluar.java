@@ -1,4 +1,4 @@
 public interface Evaluar {
-    void clasificarNivel();
-    void calcularBono();
+    String clasificarNivel(double rendimiento);
+    double calcularBono(String nivel);
 }

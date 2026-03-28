@@ -1,13 +1,10 @@
-public class Ciclismo extends Atleta implements  Evaluar{
+import java.lang.ref.SoftReference;
+
+public class Ciclismo extends Atleta implements  Evaluar {
     private double kilometroRecorrido;
     private double tiempoHoras;
 
     public Ciclismo() {
-    }
-
-    public Ciclismo(double kilometroRecorrido, double tiempoHoras) {
-        this.kilometroRecorrido = kilometroRecorrido;
-        this.tiempoHoras = tiempoHoras;
     }
 
     public Ciclismo(String nombre, int edad, double horasEntrenamiento, double kilometroRecorrido, double tiempoHoras) {
@@ -24,19 +21,37 @@ public class Ciclismo extends Atleta implements  Evaluar{
                 '}';
     }
 
+    public void mostrarInfo(){
+        System.out.println("--Nombre: "+nombre+" --Edad:"+edad+" --Horas de entrenamiento: "+horasEntrenamiento+" --Recorrido(km): "+kilometroRecorrido+" --Tiempo(h): "+tiempoHoras);
+    }
+
     @Override
-    public void calcularRendimineto() {
+    public double calcularRendimineto() {
         double rendimiento = kilometroRecorrido / tiempoHoras;
-        System.out.println(rendimiento);
+        return rendimiento;
     }
 
     @Override
-    public void clasificarNivel() {
-
+    public String clasificarNivel(double rendimiento) {
+        if(rendimiento<30){
+            return "basico";
+        }else if(rendimiento>=30&&rendimiento<=70){
+            return "competente";
+        }else {
+            return "elite";
+        }
     }
-
     @Override
-    public void calcularBono() {
-
+    public double calcularBono(String nivel) {
+        switch (nivel){
+            case "basico":
+                return 50000;
+            case "competente":
+                return 150000;
+            case "elite":
+                return 300000;
+            default:
+                return 0;
+        }
     }
 }
